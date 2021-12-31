@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ssafy.kurlygit.databinding.ViewholderItemBinding
 
-class MainAdapter(var itemList : List<Int>)
+class MainAdapter(var itemList : List<Repository>)
     : RecyclerView.Adapter<MainViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {

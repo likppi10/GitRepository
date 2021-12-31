@@ -38,9 +38,12 @@ class MainActivity : AppCompatActivity() {
     inner class RepositoryCallback : BaseCallback<Repositories> {
         override fun onSuccess(code: Int, responseData: Repositories) {
 
-            Toast.makeText(this@MainActivity, ""+responseData,Toast.LENGTH_SHORT).show()
-            Log.d("Test", "성공 $responseData")
+            var repositoryList = responseData.items
+            val adapter = MainAdapter(repositoryList)
 
+            binding.recyclerView.adapter = adapter
+
+            binding.tvResultCnt.text = responseData.total_count.toString()
 
         }
 
