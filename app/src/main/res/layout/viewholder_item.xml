@@ -43,7 +43,7 @@
         app:layout_constraintEnd_toStartOf="@+id/tvRepFork"
         app:layout_constraintTop_toBottomOf="@+id/tvRepSubtitle"
         tools:text="29.8k"
-        android:text="29.8k"/>
+        android:text="29888"/>
 
     <TextView
         android:id="@+id/tvRepFork"
