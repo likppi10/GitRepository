@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">KurlyGit</string>
+
+    <string name="main_search_word">Search..</string>
 </resources>
