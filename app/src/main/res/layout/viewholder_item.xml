@@ -17,7 +17,7 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="제목"/>
+        android:text="@string/viewholder_title"/>
 
     <TextView
         android:id="@+id/tvRepSubtitle"
@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/tvRepTitle"
         app:layout_constraintTop_toBottomOf="@id/tvRepTitle"
-        android:text="부제목"/>
+        android:text="@string/viewholder_subtitle"/>
 
     <TextView
         android:id="@+id/tvRepStar"
@@ -43,7 +43,7 @@
         app:layout_constraintEnd_toStartOf="@+id/tvRepFork"
         app:layout_constraintTop_toBottomOf="@+id/tvRepSubtitle"
         tools:text="29.8k"
-        android:text="29888"/>
+        android:text="@string/viewholder_star"/>
 
     <TextView
         android:id="@+id/tvRepFork"
@@ -57,6 +57,16 @@
         app:layout_constraintEnd_toEndOf="@id/tvRepSubtitle"
         app:layout_constraintTop_toBottomOf="@id/tvRepSubtitle"
         tools:text="Fork 불가"
-        android:text="Fork 불가"/>
+        android:text="@string/viewholder_fork"/>
+
+    <TextView
+        android:id="@+id/tvRepPriv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/viewholder_private"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRepSubtitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

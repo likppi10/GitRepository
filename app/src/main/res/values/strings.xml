@@ -2,4 +2,14 @@
     <string name="app_name">KurlyGit</string>
 
     <string name="main_search_word">Search..</string>
+    <string name="main_search_result">검색 결과 :</string>
+    <string name="main_search_result_cnt">0 개</string>
+    <string name="main_search_btn">검색</string>
+
+    <string name="viewholder_title">제목</string>
+    <string name="viewholder_subtitle">부제목</string>
+    <string name="viewholder_star">29888</string>
+    <string name="viewholder_fork">Fork 불가</string>
+    <string name="viewholder_private">private</string>
+
 </resources>
