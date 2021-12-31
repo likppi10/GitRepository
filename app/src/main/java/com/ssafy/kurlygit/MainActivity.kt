@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
 
     inner class RepositoryCallback : BaseCallback<Repositories> {
 
-        @SuppressLint("NotifyDataSetChanged")
+        @SuppressLint("NotifyDataSetChanged", "SetTextI18n")
         override fun onSuccess(code: Int, responseData: Repositories) {
 
             /*
@@ -113,7 +113,7 @@ class MainActivity : AppCompatActivity() {
 
             /* 리스트 적용을 마친 후, 최근 검색어를 현재 edtSearchWord에 있는 단어로 바꿔주고, 검색 결과 수를 출력합니다. */
             ApplicationClass.recentWord = binding.edtSearchWord.text.toString()
-            binding.tvResultCnt.text = responseData.total_count.toString()
+            binding.tvResultCnt.text = "${responseData.total_count.toString()} 개"
 
         }
 

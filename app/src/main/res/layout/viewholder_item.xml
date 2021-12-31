@@ -8,16 +8,20 @@
 
     <TextView
         android:id="@+id/tvRepTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/viewholder_title"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvRepSubtitle"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="@string/viewholder_title"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvRepSubtitle"
@@ -32,32 +36,32 @@
 
     <TextView
         android:id="@+id/tvRepStar"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="12dp"
+        android:text="@string/viewholder_star"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tvRepFork"
         app:layout_constraintTop_toBottomOf="@+id/tvRepSubtitle"
-        tools:text="29.8k"
-        android:text="@string/viewholder_star"/>
+        tools:text="Star 개수" />
 
     <TextView
         android:id="@+id/tvRepFork"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp"
+        android:text="@string/viewholder_fork"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/tvRepSubtitle"
         app:layout_constraintTop_toBottomOf="@id/tvRepSubtitle"
-        tools:text="Fork 불가"
-        android:text="@string/viewholder_fork"/>
+        tools:text="Fork 개수" />
 
     <TextView
         android:id="@+id/tvRepPriv"
