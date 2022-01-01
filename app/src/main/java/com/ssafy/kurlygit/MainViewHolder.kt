@@ -8,15 +8,21 @@ class MainViewHolder(private val binding: ViewholderItemBinding) : RecyclerView.
 
     @SuppressLint("SetTextI18n")
     fun bind(item: Repository) {
-        binding.tvRepTitle.text = item.name
-        binding.tvRepSubtitle.text = item.description
-        if(item.private){
-            binding.tvRepPriv.text = "Private"
-        }else{
-            binding.tvRepPriv.text = "Public"
-        }
 
-        binding.tvRepFork.text = "Fork : ${item.forks_count.toString()}"
-        binding.tvRepStar.text = "Star : ${item.stargazers_count.toString()}"
+        with(binding){
+            repo = item
+            executePendingBindings()
+        }
+//        binding.tvRepTitle.text = item.name
+//        binding.tvRepSubtitle.text = item.description
+//
+//        if(item.private){
+//            binding.tvRepPriv.text = "Private"
+//        }else{
+//            binding.tvRepPriv.text = "Public"
+//        }
+//
+//        binding.tvRepFork.text = "Fork : ${item.forks_count.toString()}"
+//        binding.tvRepStar.text = "Star : ${item.stargazers_count.toString()}"
     }
 }
