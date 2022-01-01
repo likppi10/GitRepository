@@ -1,9 +1,12 @@
-package com.ssafy.kurlygit
+package com.ssafy.kurlygit.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.ssafy.kurlygit.util.Diff
+import com.ssafy.kurlygit.R
+import com.ssafy.kurlygit.ui.view.data.model.Repository
 import com.ssafy.kurlygit.databinding.ViewholderItemBinding
 import com.ssafy.kurlygit.databinding.ViewholderLoadingBinding
 

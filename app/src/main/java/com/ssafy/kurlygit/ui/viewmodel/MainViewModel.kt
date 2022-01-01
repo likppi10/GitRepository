@@ -1,11 +1,14 @@
-package com.ssafy.kurlygit
+package com.ssafy.kurlygit.ui.viewmodel
 
 import android.annotation.SuppressLint
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.ssafy.kurlygit.ApplicationClass
+import com.ssafy.kurlygit.data.repository.MainRepository
+import com.ssafy.kurlygit.ui.view.data.model.Repositories
+import com.ssafy.kurlygit.ui.view.data.model.Repository
 import kotlinx.coroutines.launch
 
 class MainViewModel(private val mainRepository: MainRepository): ViewModel() {

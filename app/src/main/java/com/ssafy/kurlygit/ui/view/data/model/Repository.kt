@@ -1,4 +1,4 @@
-package com.ssafy.kurlygit
+package com.ssafy.kurlygit.ui.view.data.model
 
 data class Repository(
     val id: Int,

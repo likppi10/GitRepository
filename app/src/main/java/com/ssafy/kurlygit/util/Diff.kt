@@ -1,6 +1,7 @@
-package com.ssafy.kurlygit
+package com.ssafy.kurlygit.util
 
 import androidx.recyclerview.widget.DiffUtil
+import com.ssafy.kurlygit.ui.view.data.model.Repository
 
 object Diff: DiffUtil.ItemCallback<Repository>() {
 
