@@ -1,7 +1,6 @@
 package com.ssafy.kurlygit
 
-class MainRepositoryImpl(): MainRepository {
+class MainRepositoryImpl(private val service : RepositoryService): MainRepository {
+    override suspend fun getRepositories(search: String): Repositories = service.getRepositories(search, ApplicationClass.nowPage)
 
-    override suspend fun getRepositories(search: String): Repositories =
-        RetrofitUtil.REPOSITORY_SERVICE.getRepositories(search, ApplicationClass.nowPage)
 }
