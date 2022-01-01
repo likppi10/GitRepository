@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -30,9 +32,8 @@ android {
         jvmTarget = '1.8'
     }
 
-    // ViewBinding
-    viewBinding {
-        enabled = true
+    buildFeatures {
+        dataBinding = true
     }
 }
 
@@ -51,4 +52,14 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
+    /* ViewModel */
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
+
+    /* LiveData */
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
+
+    /* Koin */
+    implementation "io.insert-koin:koin-androidx-scope:2.2.3"
+    implementation "io.insert-koin:koin-androidx-viewmodel:2.2.3"
+    testImplementation "io.insert-koin:koin-test:2.2.3"
 }
