@@ -11,21 +11,13 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: MainAdapter
-    //private var stopThisIsEnd = false
 
-//    private lateinit var mJob: Job
-//     override val coroutineContext: CoroutineContext
-//        get() = Dispatchers.IO
-
-    val viewModel by viewModel<MainViewModel>()
+    val viewModel:MainViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        //mJob = Job()
 
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         adapter = MainAdapter()
@@ -36,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnSerach.setOnClickListener {
             val searchWord = binding.edtSearchWord.text.toString()
 
-            // Github API와 통신하기 직전의 지점으로 다른 단어를 새로 검색한 경우 페이지를 1로 지정해줘야 합니다.
+            // API와 통신하기 직전의 지점으로 다른 단어를 새로 검색한 경우 페이지를 1로 지정해줘야 합니다.
             if(ApplicationClass.recentWord!=searchWord){
                 ApplicationClass.nowPage = 1
             }
@@ -78,10 +70,9 @@ class MainActivity : AppCompatActivity() {
         viewModel.rep.observe(this) {
             with(binding){
                 repos = it
-                executePendingBindings()
+                nonRes = it.total_count==0
             }
         }
 
     }
-
 }
