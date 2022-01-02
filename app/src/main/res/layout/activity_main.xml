@@ -7,10 +7,7 @@
         <import type="android.view.View" />
         <variable
             name="repos"
-            type="com.ssafy.kurlygit.ui.view.data.model.Repositories" />
-        <variable
-            name="mainVM"
-            type="com.ssafy.kurlygit.ui.viewmodel.MainViewModel" />
+            type="com.ssafy.kurlygit.ui.view.data.model.RepositoriesModel" />
         <variable
             name="nonRes"
             type="Boolean" />

@@ -7,19 +7,19 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ssafy.kurlygit.ApplicationClass
 import com.ssafy.kurlygit.data.repository.MainRepository
-import com.ssafy.kurlygit.ui.view.data.model.Repositories
-import com.ssafy.kurlygit.ui.view.data.model.Repository
+import com.ssafy.kurlygit.ui.view.data.model.RepositoriesModel
+import com.ssafy.kurlygit.ui.view.data.model.RepositoryModel
 import kotlinx.coroutines.launch
 
 class MainViewModel(private val mainRepository: MainRepository): ViewModel() {
 
-    private val _repositories = MutableLiveData<MutableList<Repository>>()
-    val repositories: LiveData<MutableList<Repository>>
+    private val _repositories = MutableLiveData<MutableList<RepositoryModel>>()
+    val repositories: LiveData<MutableList<RepositoryModel>>
         get() = _repositories
-    private val list: MutableList<Repository> = mutableListOf()
+    private val list: MutableList<RepositoryModel> = mutableListOf()
 
-    private var _rep = MutableLiveData<Repositories>()
-    val rep: LiveData<Repositories>
+    private var _rep = MutableLiveData<RepositoriesModel>()
+    val rep: LiveData<RepositoriesModel>
         get() = _rep
 
     @SuppressLint("SetTextI18n")
@@ -66,7 +66,7 @@ class MainViewModel(private val mainRepository: MainRepository): ViewModel() {
                         }
                         list.addAll(it.items)
                     }
-                    list.add(Repository(0,"",true,"",0,0))
+                    list.add(RepositoryModel(0,"",true,"",0,0))
                 }
 
                 _repositories.value = list

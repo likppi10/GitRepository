@@ -1,15 +1,15 @@
 package com.ssafy.kurlygit.util
 
 import androidx.recyclerview.widget.DiffUtil
-import com.ssafy.kurlygit.ui.view.data.model.Repository
+import com.ssafy.kurlygit.ui.view.data.model.RepositoryModel
 
-object Diff: DiffUtil.ItemCallback<Repository>() {
+object Diff: DiffUtil.ItemCallback<RepositoryModel>() {
 
-    override fun areItemsTheSame(oldItem: Repository, newItem: Repository): Boolean {
+    override fun areItemsTheSame(oldItem: RepositoryModel, newItem: RepositoryModel): Boolean {
         return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: Repository, newItem: Repository): Boolean {
+    override fun areContentsTheSame(oldItem: RepositoryModel, newItem: RepositoryModel): Boolean {
         return oldItem == newItem
     }
 }

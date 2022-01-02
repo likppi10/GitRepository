@@ -1,6 +1,6 @@
 package com.ssafy.kurlygit.ui.view.data.model
 
-data class Repository(
+data class RepositoryModel(
     val id: Int,
     val name :  String,
     val private: Boolean,

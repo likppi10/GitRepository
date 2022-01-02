@@ -6,7 +6,7 @@
     <data>
         <variable
             name="repo"
-            type="com.ssafy.kurlygit.ui.view.data.model.Repository" />
+            type="com.ssafy.kurlygit.ui.view.data.model.RepositoryModel" />
 
     </data>
 
