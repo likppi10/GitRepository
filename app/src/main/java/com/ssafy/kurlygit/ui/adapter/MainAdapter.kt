@@ -2,6 +2,7 @@ package com.ssafy.kurlygit.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.ssafy.kurlygit.util.Diff
@@ -12,11 +13,13 @@ import com.ssafy.kurlygit.databinding.ViewholderLoadingBinding
 
 class MainAdapter
     : ListAdapter<RepositoryModel,RecyclerView.ViewHolder>(Diff) {
+
+    /* 현재 아이템이 로딩 중인지 데이터를 가진 아이템인지 분기 처리합니다.*/
     private val VIEW_TYPE_ITEM = 0
     private val VIEW_TYPE_LOADING = 1
 
     override fun getItemViewType(position: Int): Int {
-        return when (getItem(position).name) {
+        return when (currentList[position].name) {
             "" -> VIEW_TYPE_LOADING
             else -> VIEW_TYPE_ITEM
         }
@@ -37,7 +40,7 @@ class MainAdapter
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val item = getItem(position)
+        val item = currentList[position]
         if(holder is MainViewHolder){
             holder.apply {
                 bind(item)
@@ -49,8 +52,14 @@ class MainAdapter
         RecyclerView.ViewHolder(binding.root) {
     }
 
+    /*  diffUtil을 사용하면 notify에서 모든 것을 알아차리지 않아도,
+    *   범위를 지정해줄 필요도 없이, 변경사항을 적용할 수 있습니다. */
     override fun submitList(list: List<RepositoryModel>?) {
         super.submitList(list?.let { ArrayList(it) })
+    }
+
+    override fun getItemCount(): Int {
+        return currentList.size
     }
 
 }

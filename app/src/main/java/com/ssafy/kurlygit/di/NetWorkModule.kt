@@ -1,4 +1,4 @@
-package com.ssafy.kurlygit
+package com.ssafy.kurlygit.di
 
 import com.ssafy.kurlygit.data.api.RepositoryService
 import okhttp3.OkHttpClient
@@ -7,6 +7,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 val networkModule = module {
+
     single{ OkHttpClient.Builder().build() }
 
     single<Retrofit>{
