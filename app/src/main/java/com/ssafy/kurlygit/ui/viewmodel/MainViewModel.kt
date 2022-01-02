@@ -1,6 +1,7 @@
 package com.ssafy.kurlygit.ui.viewmodel
 
 import android.annotation.SuppressLint
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -22,11 +23,9 @@ class MainViewModel(private val mainRepository: MainRepository): ViewModel() {
     val rep: LiveData<RepositoriesModel>
         get() = _rep
 
-    @SuppressLint("SetTextI18n")
     fun getRepositories(searchWord: String) = viewModelScope.launch {
         runCatching { mainRepository.getRepositories(searchWord)}
             .onSuccess {
-
                 /*
                 * 1. 결과가 없을 때
                 * 1-1. 어댑터에는 이미 불러온 리스트가 있고, 더 불러올게 없을 경우
@@ -70,6 +69,7 @@ class MainViewModel(private val mainRepository: MainRepository): ViewModel() {
                 }
 
                 _repositories.value = list
+
                 /* 리스트 적용을 마친 후, 최근 검색어를 현재 edtSearchWord에 있는 단어로 바꿔주고 페이지 수를 1 늘립니다. 또, 검색 결과 수를 출력합니다. */
                 ApplicationClass.recentWord = searchWord
                 ApplicationClass.nowPage++

@@ -12,5 +12,4 @@ class MainRepositoryImpl(private val service : RepositoryService): MainRepositor
             RepositoriesMapper.toModel(it)
         }
     }
-
 }

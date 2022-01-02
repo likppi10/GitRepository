@@ -1,4 +1,4 @@
-package com.ssafy.kurlygit
+package com.ssafy.kurlygit.entity
 
 data class RepositoriesEntity(
     val total_count :  Int,

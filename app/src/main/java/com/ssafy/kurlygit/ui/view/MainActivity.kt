@@ -1,6 +1,7 @@
 package com.ssafy.kurlygit.ui.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -31,10 +32,9 @@ class MainActivity : AppCompatActivity() {
         binding.btnSerach.setOnClickListener {
             val searchWord = binding.edtSearchWord.text.toString()
 
-            // API와 통신하기 직전의 지점으로 다른 단어를 새로 검색한 경우 페이지를 1로 지정해줘야 합니다.
-            if(ApplicationClass.recentWord !=searchWord){
-                ApplicationClass.nowPage = 1
-            }
+            // 검색 버튼을 누를 시 새로운 검색으로 취급하여, 최근 단어를 ""로,  페이지를 1로 지정해줘야 합니다.
+            ApplicationClass.nowPage = 1
+            ApplicationClass.recentWord = ""
 
             viewModel.getRepositories(searchWord)
             ApplicationClass.stopThisIsEnd = false
@@ -60,7 +60,6 @@ class MainActivity : AppCompatActivity() {
                     && lastVisibleItemPosition == itemTotalCount
                     && itemTotalCount!=0 && !ApplicationClass.stopThisIsEnd
                 ) {
-
                     viewModel.getRepositories(ApplicationClass.recentWord)
                 }
             }
@@ -68,6 +67,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun observeData() {
+        /* repositories에서 repositoryModel의 변경을 submit 해줍니다.
+        * rep에서 검색 결과가 없는 것을 알려주는 view와 검색 결과 수에 대한 변경을 observe 합니다.
+        * */
         viewModel.repositories.observe(this) {
             adapter.submitList(it)
         }

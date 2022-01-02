@@ -1,31 +1,34 @@
 package com.ssafy.kurlygit.data.mapper
 
-import com.ssafy.kurlygit.RepositoriesEntity
+import android.util.Log
+import com.ssafy.kurlygit.entity.RepositoriesEntity
 import com.ssafy.kurlygit.ui.view.data.model.RepositoriesModel
 import com.ssafy.kurlygit.ui.view.data.model.RepositoryModel
 
 object RepositoriesMapper: BaseMapper<RepositoriesEntity, RepositoriesModel> {
+
+    /* DB에서의 값들이 매칭되는 Entity를 레이어 간에서 사용하기 위해 Model로 바꿔줍니다.
+    * 본 어플에서는 불러들여 읽기만 사용하므로, Model -> Entity로 변환하는 것은 생략합니다.
+    * 또한, null 값 처리를 여기서 해줘서 감안하지 않아도 됩니다. */
     override fun toModel(entity: RepositoriesEntity): RepositoriesModel {
-        return RepositoriesModel(
+        var repositoriesModel = RepositoriesModel(
             total_count = entity.total_count,
             items = mutableListOf<RepositoryModel>().apply {
                 entity.items.forEach {
                     this.add(
                         RepositoryModel(
-                            it.id,
-                            it.name,
-                            it.private,
-                            it.description,
-                            it.stargazers_count,
-                            it.forks_count)
+                            id = it.id,
+                            name = it.name,
+                            private = it.private,
+                            description = it.description,
+                            stargazers_count = it.stargazers_count,
+                            forks_count = it.forks_count)
                     )
+
                 }
             }
         )
+        return repositoriesModel
     }
 
-//    override fun toEntity(model: Repositories): Entity {
-//        return RepositoriesEntity( // TODO GET 함수에서는 쓸모가 없다?!
-//        )
-//    }
 }

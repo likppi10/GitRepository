@@ -10,6 +10,7 @@ class MainViewHolder(private val binding: ViewholderItemBinding) : RecyclerView.
     @SuppressLint("SetTextI18n")
     fun bind(item: RepositoryModel) {
 
+        /* 아이템을 뷰에 적용시켜줍니다. */
         with(binding){
             repo = item
             executePendingBindings()
