@@ -1,10 +1,13 @@
-package com.ssafy.kurlygit
+package com.ssafy.kurlygit.ui.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.ssafy.kurlygit.ApplicationClass
+import com.ssafy.kurlygit.ui.viewmodel.MainViewModel
 import com.ssafy.kurlygit.databinding.ActivityMainBinding
+import com.ssafy.kurlygit.ui.adapter.MainAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -12,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: MainAdapter
 
-    val viewModel:MainViewModel by viewModel()
+    val viewModel: MainViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             val searchWord = binding.edtSearchWord.text.toString()
 
             // API와 통신하기 직전의 지점으로 다른 단어를 새로 검색한 경우 페이지를 1로 지정해줘야 합니다.
-            if(ApplicationClass.recentWord!=searchWord){
+            if(ApplicationClass.recentWord !=searchWord){
                 ApplicationClass.nowPage = 1
             }
 
@@ -55,7 +58,8 @@ class MainActivity : AppCompatActivity() {
                 * */
                 if (!binding.recyclerView.canScrollVertically(1)
                     && lastVisibleItemPosition == itemTotalCount
-                    && itemTotalCount!=0 && !ApplicationClass.stopThisIsEnd) {
+                    && itemTotalCount!=0 && !ApplicationClass.stopThisIsEnd
+                ) {
 
                     viewModel.getRepositories(ApplicationClass.recentWord)
                 }

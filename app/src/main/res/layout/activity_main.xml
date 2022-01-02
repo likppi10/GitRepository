@@ -7,10 +7,7 @@
         <import type="android.view.View" />
         <variable
             name="repos"
-            type="com.ssafy.kurlygit.Repositories" />
-        <variable
-            name="mainVM"
-            type="com.ssafy.kurlygit.MainViewModel" />
+            type="com.ssafy.kurlygit.ui.view.data.model.RepositoriesModel" />
         <variable
             name="nonRes"
             type="Boolean" />
@@ -19,7 +16,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".ui.view.MainActivity">
 
         <EditText
             android:id="@+id/edtSearchWord"

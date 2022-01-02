@@ -1,5 +1,5 @@
-package com.ssafy.kurlygit
-import retrofit2.Call
+package com.ssafy.kurlygit.data.api
+import com.ssafy.kurlygit.RepositoriesEntity
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -8,5 +8,5 @@ interface RepositoryService {
     suspend fun getRepositories(
         @Query("q") query: String,
         @Query("page") page: Int
-    ): Repositories
+    ): RepositoriesEntity
 }
