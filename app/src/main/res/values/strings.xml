@@ -15,7 +15,8 @@
     <string name="viewholder_star_wait">Star : 0 개</string>
     <string name="viewholder_fork_received">Fork : %1$d 개</string>
     <string name="viewholder_fork_wait">Fork : 0 개</string>
-    <string name="viewholder_private_received">%b</string>
+    <string name="viewholder_private_received_false">Publish</string>
+    <string name="viewholder_private_received_true">Private</string>
     <string name="viewholder_private_wait">정보 없음</string>
 
     <string name="main_search_no_result">검색 결과가 없습니다.</string>
